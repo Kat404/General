@@ -7,6 +7,331 @@
     padding: 20px;
 }
 
+.project-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-info h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(145deg, var(--text-color), var(--text-color) 50%, transparent 50%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-info h1:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.project-credits {
+    font-size: 1.1em;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 10px 0 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+html.dark .project-credits {
+    opacity: 0.9;
+}
+
+/* Estilos base para el botón de tema */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    font-size: 20px;
+    line-height: 1;
+    display: block;
+}
+
+.theme-icon.dark-mode {
+    display: none;
+}
+
+html.dark .theme-icon {
+    display: none;
+}
+
+html.dark .theme-icon.dark-mode {
+    display: block;
+}
+
+/* Estilos para modo claro */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --btn-bg: #f5f5f5;
+    --btn-hover: #e0e0e0;
+    --increase-color: #2ecc71;
+    --decrease-color: #e74c3c;
+}
+
+/* Estilos para modo oscuro */
+html.dark {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --btn-bg: #2d2d2d;
+    --btn-hover: #3d3d3d;
+    --increase-color: #27ae60;
+    --decrease-color: #c0392b;
+}
+
+/* Estilos específicos para el contador */
+.counter {
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    background-color: var(--btn-bg);
+}
+
+/* Ajuste para el contador en modo oscuro */
+html.dark .counter {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Aplicar variables CSS */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fondo animado */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-color) 100%);
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    flex: 1;
+}
+
+.project-description {
+    max-width: 600px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--btn-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-description h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.project-description p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.project-description ul {
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+.project-description li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.project-description strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.top-buttons {
+    justify-content: center;
+}
+
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bottom-buttons {
+    justify-content: center;
+}
+
+.counter {
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    background-color: var(--btn-bg);
+    flex: 1;
+    min-width: 80px;
+}
+
+html.dark .counter {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.btn.divide {
+    background-color: #d32f2f; /* Rojo fuerte en modo claro */
+    color: white;
+}
+
+html.dark .btn.divide {
+    background-color: #c62828; /* Rojo más fuerte en modo oscuro */
+    color: white;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+}
+
+.multiply {
+    background-color: #00bfa5; /* Verde turquesa */
+    color: white;
+}
+
+html.dark .multiply {
+    background-color: #00897b; /* Verde turquesa más oscuro */
+    color: white;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.increase {
+    background-color: var(--increase-color);
+    color: white;
+}
+
+.decrease {
+    background-color: var(--decrease-color);
+    color: white;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.counter {
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .counter-container {
     display: flex;
     gap: 20px;

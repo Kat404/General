@@ -1,18 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador Interactivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Contador</h1>
+        <button id="darkModeToggle" class="theme-toggle" title="Cambiar a modo claro">
+            <span class="theme-text light-mode">Modo Claro</span>
+            <span class="theme-text">Modo Oscuro</span>
+        </button>
+        <div class="project-info">
+            <h1>Contador</h1>
+            <p class="project-credits">Proyecto de vibe coding usando Windsurf con su IA Cascade Base</p>
+        </div>
         <div class="counter-container">
-            <button id="decrease" class="btn decrease">Restar</button>
-            <div class="counter">0</div>
-            <button id="increase" class="btn increase">Sumar</button>
+            <div class="button-group top-buttons">
+                <button id="multiply" class="btn multiply">x2</button>
+            </div>
+            <div class="counter-wrapper">
+                <button id="decrease" class="btn decrease">Restar</button>
+                <div class="counter">0</div>
+                <button id="increase" class="btn increase">Sumar</button>
+            </div>
+            <div class="button-group bottom-buttons">
+                <button id="divide" class="btn divide">÷2</button>
+            </div>
+        </div>
+        <div class="project-description">
+            <h2>Descripción del Proyecto</h2>
+            <p>Este contador interactivo es un proyecto desarrollado usando las herramientas más modernas:</p>
+            <ul>
+                <li><strong>Windsurf:</strong> Entorno de desarrollo inteligente</li>
+                <li><strong>Cascade Base:</strong> IA avanzada para programación</li>
+                <li><strong>HTML5, CSS3 y JavaScript:</strong> Tecnologías web modernas</li>
+                <li><strong>Responsive Design:</strong> Diseño adaptable a cualquier dispositivo</li>
+            </ul>
         </div>
     </div>
     <script src="script.js"></script>
